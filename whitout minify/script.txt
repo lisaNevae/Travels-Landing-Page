@@ -1,0 +1,137 @@
+//NAVBAR MENU
+let navbar = document.querySelector(".header .navbar"),
+  navOpen = document.querySelector(".icons #menu-btn"),
+  navClose = document.querySelector("#nav-close");
+
+navOpen.addEventListener("click", () => {
+  navbar.classList.add("active");
+});
+
+navClose.addEventListener("click", (e) => {
+  navbar.classList.remove("active");
+});
+
+window.addEventListener("scroll", () => {
+  navbar.classList.remove("active");
+
+  if (window.scrollY > 0) {
+    document.querySelector(".header").classList.add("active");
+  } else {
+    document.querySelector(".header").classList.remove("active");
+  }
+});
+
+window.addEventListener("load", () => {
+  if (window.scrollY > 0) {
+    document.querySelector(".header").classList.add("active");
+  } else {
+    document.querySelector(".header").classList.remove("active");
+  }
+});
+
+//SEARCH FORM
+
+let searchForm = document.querySelector(".search-form"),
+  formOpen = document.querySelector("#search-btn"),
+  formClose = document.querySelector("#close-search");
+
+formOpen.addEventListener("click", () => {
+  searchForm.classList.add("active");
+});
+
+formClose.addEventListener("click", (e) => {
+  searchForm.classList.remove("active");
+});
+
+// CAROUSEL
+
+let swiper_home = new Swiper(".home-slider", {
+  loop: true,
+  grabCursor: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
+let swiper_products = new Swiper(".product-slider", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+});
+
+let swiper_reviews = new Swiper(".review-slider", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+let swiper_blog = new Swiper(".blogs-slider", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 0,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    991: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+let swiper_clients = new Swiper(".clients-slider", {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 20,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    640: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+});
